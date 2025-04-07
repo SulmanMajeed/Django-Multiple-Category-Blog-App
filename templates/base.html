@@ -1,0 +1,482 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SpectrunX – Explore Insights in Tech, Travel, Lifestyle & More{% endblock %}</title>
+    <meta name="description"
+        content="{% block meta_description %}SpectrunX brings you expert insights and trending topics in technology, travel, lifestyle, UI/UX design, food, and business. Explore now!{% endblock %}">
+    <link rel="icon" type="image/svg+xml" href="{% static 'favicon/favicon.svg' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        'primary-dark': '#4f46e5',
+                        secondary: '#f59e0b',
+                        'secondary-dark': '#d97706',
+                        dark: '#111827',
+                        'gray-dark': '#374151',
+                        'gray-medium': '#6b7280',
+                        'gray-light': '#e5e7eb',
+                        tech: '#3b82f6',
+                        travel: '#10b981',
+                        lifestyle: '#ec4899',
+                        food: '#f59e0b',
+                        art: '#8b5cf6',
+                        science: '#6366f1',
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        
+        /* Hide scrollbars for all browsers */
+        html,
+        body {
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            overflow-y: auto;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbars for elements that might have scrollable content */
+        * {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Search popup animation */
+        .search-popup {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .search-popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile Menu Animation */
+        #mobileMenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        #mobileMenu.active {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+    </style>
+</head>
+
+<body class="font-body text-gray-dark leading-relaxed bg-gray-50">
+    <!-- Search Popup -->
+    <div id="searchPopup" class="search-popup fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Search SpectrunX</h3>
+                <button id="closeSearch" class="text-gray-500 hover:text-gray-900">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <form action="{% url 'search' %}" method="get" class="relative">
+                <input type="text"
+                    class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="What are you looking for?" id="search" name="q">
+                <button type="submit" class="absolute right-4 top-1/2 -translate-y-1/2 text-primary">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+            <div class="mt-4 text-xl font-bold">
+                Try searching for: technology, travel tips, food recipes...
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-white shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="/" class="flex items-center font-heading text-3xl font-extrabold text-dark">
+                <i
+                    class="fa-solid fa-layer-group mr-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"></i>
+                Spectrun<span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">X</span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="hidden lg:block mx-auto">
+                <ul class="flex items-center list-none">
+                    <li class="relative mx-3"><a href="/"
+                            class="font-semibold text-base py-2 px-2 text-primary transition-colors">Home</a></li>
+                    <li class="relative mx-3"><a href="/category/technology"
+                            class="font-semibold text-base py-2 px-2 text-gray-dark hover:text-tech transition-colors"
+                            data-category="tech">Technology</a></li>
+                    <li class="relative mx-3"><a href="/category/travel"
+                            class="font-semibold text-base py-2 px-2 text-gray-dark hover:text-travel transition-colors"
+                            data-category="travel">Travel</a></li>
+                    <li class="relative mx-3"><a href="/category/lifestyle"
+                            class="font-semibold text-base py-2 px-2 text-gray-dark hover:text-lifestyle transition-colors"
+                            data-category="lifestyle">Lifestyle</a></li>
+                    <li class="relative mx-3"><a href="category/food"
+                            class="font-semibold text-base py-2 px-2 text-gray-dark hover:text-food transition-colors"
+                            data-category="food">Food</a></li>
+                    <li class="relative mx-3"><a href="/about"
+                            class="font-semibold text-base py-2 px-2 text-gray-dark hover:text-primary transition-colors">About</a>
+                    </li>
+                    <li class="relative mx-3"><a href="/contact"
+                            class="font-semibold text-base py-2 px-2 text-gray-dark hover:text-primary transition-colors">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center">
+                <button id="searchToggle" class="hover:text-primary transition-colors hidden lg:block">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span class="sr-only">Search</span>
+                </button>
+                <button id="mobileMenuToggle"
+                    class="ml-4 lg:hidden flex items-center justify-center w-10 h-10 hover:bg-gray-100 rounded-full transition-colors">
+                    <i class="fa-solid fa-bars"></i>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobileMenu" class="lg:hidden bg-white shadow-md">
+            <nav class="container mx-auto px-6 py-4">
+                <ul class="list-none space-y-3">
+                    <li><a href="/"
+                            class="font-semibold text-primary block py-2 border-b border-gray-100 transition-colors">Home</a>
+                    </li>
+                    <li><a href="/category/technology"
+                            class="font-semibold text-gray-dark hover:text-tech block py-2 border-b border-gray-100 transition-colors"
+                            data-category="tech">Technology</a></li>
+                    <li><a href="/category/travel"
+                            class="font-semibold text-gray-dark hover:text-travel block py-2 border-b border-gray-100 transition-colors"
+                            data-category="travel">Travel</a></li>
+                    <li><a href="/category/lifestyle"
+                            class="font-semibold text-gray-dark hover:text-lifestyle block py-2 border-b border-gray-100 transition-colors"
+                            data-category="lifestyle">Lifestyle</a></li>
+                    <li><a href="/category/food"
+                            class="font-semibold text-gray-dark hover:text-food block py-2 border-b border-gray-100 transition-colors"
+                            data-category="food">Food</a></li>
+                    <li><a href="/about"
+                            class="font-semibold text-gray-dark hover:text-primary block py-2 border-b border-gray-100 transition-colors">About</a>
+                    </li>
+                    <li><a href="/contact"
+                            class="font-semibold text-gray-dark hover:text-primary block py-2 border-b border-gray-100 transition-colors">Contact</a>
+                    </li>
+                    <li>
+                        <button id="mobileSearchToggle"
+                            class="font-semibold text-gray-dark hover:text-primary flex items-center py-2 transition-colors">
+                            <i class="fa-solid fa-magnifying-glass mr-2"></i>
+                            Search
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen pt-20">
+        {% block main %}
+        <!-- Page content will be inserted here -->
+        {% endblock main %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-10 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- About Column -->
+                <div>
+                    <a href="index.html" class="flex items-center font-heading text-2xl font-bold text-dark mb-4">
+                        <i
+                            class="fa-solid fa-layer-group mr-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"></i>
+                        Spectrun<span
+                            class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">X</span>
+                    </a>
+                    <p class="text-gray-500">Sharing knowledge and stories that inspire. Stay updated with the latest in
+                        technology, digital trends, and innovative solutions.</p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-gray-700">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/"
+                                class="font-semibold text-gray-500 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#/blog"
+                                class="font-semibold text-gray-500 hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="/about"
+                                class="font-semibold text-gray-500 hover:text-primary transition-colors">About Us</a>
+                        </li>
+                        <li><a href="/contact"
+                                class="font-semibold text-gray-500 hover:text-primary transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Categories Column -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-gray-700">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/category/technology"
+                                class="font-semibold text-gray-500 hover:text-tech transition-colors">Technology</a>
+                        </li>
+                        <li><a href="/category/ai"
+                                class="font-semibold text-gray-500 hover:text-science transition-colors">Artificial
+                                Intelligence</a></li>
+                        <li><a href="/category/coding"
+                                class="font-semibold text-gray-500 hover:text-primary transition-colors">Programming</a>
+                        </li>
+                        <li><a href="/category/digital-marketing"
+                                class="font-semibold text-gray-500 hover:text-lifestyle transition-colors">Digital
+                                Marketing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Column -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-gray-700">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#/privacy-policy"
+                                class="font-semibold text-gray-500 hover:text-primary transition-colors">Privacy
+                                Policy</a></li>
+                        <li><a href="#/terms-of-service"
+                                class="font-semibold text-gray-500 hover:text-primary transition-colors">Terms of
+                                Service</a></li>
+                        <li><a href="#/cookie-policy"
+                                class="font-semibold text-gray-500 hover:text-primary transition-colors">Cookie
+                                Policy</a></li>
+                        <li><a href="#/disclaimer"
+                                class="font-semibold text-gray-500 hover:text-primary transition-colors">Disclaimer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter Row -->
+            <div class="mt-10 pt-8 border-t border-gray-200">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                    <div class="md:col-span-3">
+                        <h3 class="text-lg font-bold mb-2 text-gray-700">Newsletter</h3>
+                        <p class="text-gray-500">Subscribe for the latest updates and insights.</p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <form method="post" action="subscribe.html" class="flex">
+                            {% csrf_token %}
+                            <input type="email" name="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="Your email" required>
+                            <button type="submit"
+                                class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-r transition-all duration-300 hover:-translate-y-0.5 font-semibold">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8 space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors"><i
+                            class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors"><i
+                            class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors"><i
+                            class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors"><i
+                            class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-gray-500">© 2025 <span class="font-medium">SpectrunX</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Search popup functionality
+        const searchToggle = document.getElementById('searchToggle');
+        const mobileSearchToggle = document.getElementById('mobileSearchToggle');
+        const searchPopup = document.getElementById('searchPopup');
+        const closeSearch = document.getElementById('closeSearch');
+
+        searchToggle.addEventListener('click', () => {
+            searchPopup.classList.add('active');
+            document.getElementById('search').focus();
+        });
+
+        if (mobileSearchToggle) {
+            mobileSearchToggle.addEventListener('click', () => {
+                searchPopup.classList.add('active');
+                document.getElementById('search').focus();
+                // Close mobile menu when search is clicked
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        }
+
+        closeSearch.addEventListener('click', () => {
+            searchPopup.classList.remove('active');
+        });
+
+        // Close search popup when clicking outside
+        searchPopup.addEventListener('click', (e) => {
+            if (e.target === searchPopup) {
+                searchPopup.classList.remove('active');
+            }
+        });
+
+        // Close search popup on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchPopup.classList.contains('active')) {
+                searchPopup.classList.remove('active');
+            }
+        });
+
+        // Mobile menu toggle with smooth animation
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+
+            // Toggle icon between bars and X
+            const icon = mobileMenuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('shadow-sm');
+            }
+        });
+
+        // Set active link based on current page
+        // Set active link based on current page
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPath = window.location.pathname;
+
+            // Reset all NAVIGATION links to default state first (excluding the logo)
+            const allNavLinks = document.querySelectorAll('nav a');
+            allNavLinks.forEach(link => {
+                // Skip the logo (checking if it contains the site name text or logo class)
+                if (!link.textContent.includes('Spectrun') && !link.classList.contains('logo')) {
+                    // Remove any active state
+                    link.classList.remove('text-primary', 'text-tech', 'text-travel', 'text-lifestyle', 'text-food');
+                    link.classList.add('text-gray-dark');
+                }
+            });
+
+            // Function to highlight the correct link
+            const highlightLink = (linkElement) => {
+                // Skip the logo
+                if (linkElement.textContent.includes('Spectrun') || linkElement.classList.contains('logo')) {
+                    return;
+                }
+
+                // Remove default state
+                linkElement.classList.remove('text-gray-dark');
+
+                // Add the appropriate color class based on data-category
+                const category = linkElement.getAttribute('data-category');
+                if (category) {
+                    linkElement.classList.add(`text-${category}`);
+                } else {
+                    linkElement.classList.add('text-primary');
+                }
+            };
+
+            // Find the exact matching link or the closest parent section
+            let exactMatch = false;
+
+            // Try to find exact matches first
+            allNavLinks.forEach(link => {
+                const linkPath = link.getAttribute('href');
+                if (linkPath === currentPath) {
+                    highlightLink(link);
+                    exactMatch = true;
+                }
+            });
+
+            // If no exact match and we're not on the homepage, try to find a parent section
+            if (!exactMatch && currentPath !== '/') {
+                allNavLinks.forEach(link => {
+                    const linkPath = link.getAttribute('href');
+                    // Check if this is a section page and current path is under it
+                    // Avoid matching home with everything
+                    if (linkPath !== '/' && currentPath.startsWith(linkPath)) {
+                        highlightLink(link);
+                    }
+                });
+            }
+
+            // Special case for homepage
+            if (currentPath === '/') {
+                // Only highlight the home link (but not the logo)
+                const homeLinks = document.querySelectorAll('nav a[href="/"]');
+                homeLinks.forEach(homeLink => {
+                    highlightLink(homeLink);
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

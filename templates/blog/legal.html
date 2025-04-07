@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Legal - SpectrunX{% endblock %}
+
+{% block main %}
+<section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Legal & Policy Center</h1>
+            <p class="text-gray-600 text-lg">Understand your rights, responsibilities, and how SpectrunX protects your data.</p>
+        </div>
+
+        <!-- Table of Contents -->
+        <nav class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-12 shadow-sm">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Contents</h2>
+            <ul class="space-y-2 list-disc pl-6 text-blue-600">
+                <li><a href="#privacy-policy" class="hover:underline">Privacy Policy</a></li>
+                <li><a href="#terms-of-service" class="hover:underline">Terms of Service</a></li>
+                <li><a href="#cookie-policy" class="hover:underline">Cookie Policy</a></li>
+                <li><a href="#disclaimer" class="hover:underline">Disclaimer</a></li>
+            </ul>
+        </nav>
+
+        <!-- Legal Sections -->
+        <div class="space-y-20">
+            <!-- Privacy Policy -->
+            <section id="privacy-policy">
+                <h2 class="text-2xl font-bold text-gray-900 border-b border-gray-200 pb-2 mb-6">Privacy Policy</h2>
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                    <p><strong>Last Updated:</strong> {% now "F j, Y" %}</p>
+                    <p>SpectrunX values your privacy. We collect only essential data to deliver content and tools across our blog categories, including AI, Marketing, and more.</p>
+                    <ul class="list-disc pl-6">
+                        <li>We do not sell or trade your data.</li>
+                        <li>We use encryption to protect your personal information.</li>
+                        <li>You have rights to access and erase your data.</li>
+                    </ul>
+                    <p>For full details or data inquiries, please contact us at privacy@spectrunx.com.</p>
+                </div>
+            </section>
+
+            <!-- Terms of Service -->
+            <section id="terms-of-service">
+                <h2 class="text-2xl font-bold text-gray-900 border-b border-gray-200 pb-2 mb-6">Terms of Service</h2>
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                    <p><strong>Last Updated:</strong> {% now "F j, Y" %}</p>
+                    <p>By using SpectrunX, you agree to abide by the following terms:</p>
+                    <ul class="list-disc pl-6">
+                        <li>Content on this platform is for informational use only.</li>
+                        <li>You may not misuse our tools or content.</li>
+                        <li>We reserve the right to suspend access if terms are violated.</li>
+                    </ul>
+                    <p>We may update terms over time. Continued use signifies agreement to any changes.</p>
+                </div>
+            </section>
+
+            <!-- Cookie Policy -->
+            <section id="cookie-policy">
+                <h2 class="text-2xl font-bold text-gray-900 border-b border-gray-200 pb-2 mb-6">Cookie Policy</h2>
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                    <p><strong>Last Updated:</strong> {% now "F j, Y" %}</p>
+                    <p>SpectrunX uses cookies to optimize performance and personalize content.</p>
+                    <ul class="list-disc pl-6">
+                        <li>We use analytics to understand user interactions.</li>
+                        <li>You can disable cookies in your browser settings.</li>
+                        <li>Essential cookies are required for site functionality.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Disclaimer -->
+            <section id="disclaimer">
+                <h2 class="text-2xl font-bold text-gray-900 border-b border-gray-200 pb-2 mb-6">Disclaimer</h2>
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                    <p><strong>Last Updated:</strong> {% now "F j, Y" %}</p>
+                    <p>The information on SpectrunX is provided "as is" without warranties. While we aim for accuracy, we do not guarantee completeness or applicability.</p>
+                    <ul class="list-disc pl-6">
+                        <li>Use content at your own discretion.</li>
+                        <li>SpectrunX is not liable for damages resulting from reliance on information.</li>
+                        <li>External links do not imply endorsement.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-16 pt-6 text-center text-sm text-gray-500 border-t border-gray-200">
+            <p>Need help or have questions? <a href="{% url 'contact' %}" class="text-blue-600 hover:underline">Contact us</a></p>
+            <p class="mt-2">&copy; {{ now|date:"Y" }} SpectrunX. All rights reserved.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

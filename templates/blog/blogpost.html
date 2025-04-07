@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+  <article class="bg-white rounded-lg shadow-md overflow-hidden">
+    <!-- Blog Header -->
+    <header class="p-6 border-b border-gray-200">
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">{{blog.title}}</h1>
+      {% if blog.author or blog.date %}
+      <div class="flex items-center text-sm text-gray-600 mt-4">
+        {% if blog.author %}
+          <img src={{blog.authorprofilepic.url}} alt="Author" class="w-8 h-8 rounded-full mr-3">{{blog.author}}
+        {% endif %}
+        {% if blog.date %}
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          {{blog.date}}
+        </span>
+        {% endif %}
+      </div>
+      {% endif %}
+    </header>
+
+    <!-- Blog Content - TinyMCE output -->
+    <div class="p-6 prose prose-lg max-w-none tinymce-content">
+      {{blog.content|safe}}
+    </div>
+  </article>
+</div>
+
+<style>
+  /* TinyMCE content styling */
+  .tinymce-content h1 { font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 1rem; }
+  .tinymce-content h2 { font-size: 1.5rem; line-height: 2rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+  .tinymce-content h3 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.75rem; }
+  .tinymce-content p { margin-top: 1rem; margin-bottom: 1rem; line-height: 1.75; }
+  .tinymce-content ul, .tinymce-content ol { margin-top: 1rem; margin-bottom: 1rem; padding-left: 2rem; }
+  .tinymce-content ul { list-style-type: disc; }
+  .tinymce-content ol { list-style-type: decimal; }
+  .tinymce-content li { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+  .tinymce-content a { color: #3182ce; text-decoration: underline; }
+  .tinymce-content blockquote { border-left: 4px solid #e2e8f0; padding-left: 1rem; font-style: italic; margin: 1.5rem 0; }
+  .tinymce-content img { max-width: 100%; height: auto; margin: 1.5rem 0; }
+  .tinymce-content table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; }
+  .tinymce-content table th, .tinymce-content table td { border: 1px solid #e2e8f0; padding: 0.5rem; }
+  .tinymce-content table th { background-color: #f7fafc; }
+  .tinymce-content pre { background-color: #f7fafc; padding: 1rem; border-radius: 0.25rem; overflow-x: auto; margin: 1.5rem 0; }
+  .tinymce-content code { font-family: monospace; background-color: #f7fafc; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-size: 0.875rem; }
+</style>
+{% endblock main %}

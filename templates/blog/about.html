@@ -1,0 +1,407 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About Us | SpecturnX{% endblock title %}About Us | SpecturnX
+
+{% block main %}
+<!-- Hero Section -->
+<!-- <section class="bg-gradient-to-r from-purple-600 to-indigo-800 text-white py-20">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">About SpecturnX</h1>
+        <p class="text-lg md:text-xl mb-8">Exploring the full spectrum of ideas, innovations, and inspirations</p>
+        <button class="bg-white text-indigo-800 font-bold py-3 px-6 rounded-lg hover:bg-indigo-100 transition duration-300">
+          Start Exploring
+        </button>
+      </div>
+      <div class="md:w-1/2">
+        <img src="{% static 'img/hero.jpeg' %}" alt="SpecturnX" class="rounded-lg shadow-2xl">
+      </div>
+    </div>
+  </div>
+</section>-->
+<section class="bg-white">
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7">
+            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-gray-900">
+                About Spectrun<span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">X</span>
+            </h1>
+            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">
+                Discover insightful articles, share your thoughts, and explore a world of knowledge. SpecturnX is where stories come to life.            </p>
+            <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300">
+                Explore Blogs
+                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </a>
+            <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100">
+                Start Writing
+            </a> 
+        </div>
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
+        </div>                
+    </div>
+</section>
+<!-- Our Story Section -->
+<section class="bg-white">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen-md mx-auto text-center mb-8 lg:mb-16">
+            <h2 class="mb-2 text-4xl tracking-tight font-extrabold text-gray-900 underline">Our Story</h2>
+            <p class="text-gray-500 sm:text-xl">From vision to reality: How SpecturnX became a platform for diverse perspectives.</p>
+        </div>
+        <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                <p class="text-gray-500 leading-relaxed mb-6">
+                    SpecturnX was born from a simple idea: to create a space where diverse perspectives could converge and thrive. In 2023, our founder envisioned a platform that would transcend traditional blogging limitations and embrace the full spectrum of human thought and creativity.
+                </p>
+                <p class="text-gray-500 leading-relaxed">
+                    What started as a personal project quickly evolved into a vibrant community of thinkers, creators, and innovators. Today, SpecturnX stands as a testament to the power of collaborative ideation and the beauty of diverse viewpoints coming together.
+                </p>
+            </div>
+            <div class="md:w-1/2">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                        <div class="text-blue-500 text-4xl font-bold mb-2">2023</div>
+                        <p class="text-gray-700">SpecturnX was founded</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                        <div class="text-blue-500 text-4xl font-bold mb-2">10k+</div>
+                        <p class="text-gray-700">Active community members</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                        <div class="text-blue-500 text-4xl font-bold mb-2">5k+</div>
+                        <p class="text-gray-700">Published articles</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                        <div class="text-blue-500 text-4xl font-bold mb-2">24</div>
+                        <p class="text-gray-700">Countries reached</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Our Mission Section -->
+<section class="bg-white">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen-md mx-auto text-center mb-8 lg:mb-16">
+            <h2 class="mb-2 text-4xl tracking-tight font-extrabold text-gray-900 underline">Our Mission</h2>
+            <p class="text-gray-500 sm:text-xl">Empowering creators and readers through innovation, inspiration, and collaboration.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div>
+                <div class="flex justify-center mb-4">
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-blue-500">
+                        <!-- Creative Writing Icon -->
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="mb-2 text-xl font-bold">Empower Creators</h3>
+                <p class="text-gray-500">We provide tools for writers and bloggers to express themselves freely.</p>
+            </div>
+            <div>
+                <div class="flex justify-center mb-4">
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-blue-500">
+                        <!-- Book/Reading Icon -->
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="mb-2 text-xl font-bold">Inspire Readers</h3>
+                <p class="text-gray-500">We curate valuable content to help readers discover new ideas and perspectives.</p>
+            </div>
+            <div>
+                <div class="flex justify-center mb-4">
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-blue-500">
+                        <!-- Community/People Icon -->
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="mb-2 text-xl font-bold">Build a Thriving Community</h3>
+                <p class="text-gray-500">We connect creators and readers, fostering meaningful discussions and collaboration.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Team Section -->
+<section class="bg-white">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen-md mx-auto text-center mb-8 lg:mb-16">
+            <h2 class="mb-2 text-4xl tracking-tight font-extrabold text-gray-900 underline">Meet Our Team</h2>
+            <p class="text-gray-500 sm:text-xl">The passionate individuals behind SpecturnX are united by a common vision: to create a platform that celebrates the full spectrum of human creativity and thought.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Team Member 1 -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
+                <img src="/api/placeholder/400/300" alt="Team Member" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Alex Johnson</h3>
+                    <p class="text-blue-500 mb-4">Founder & CEO</p>
+                    <p class="text-gray-500 mb-4">With a background in both technology and humanities, Alex brings a unique interdisciplinary perspective to SpecturnX.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-blue-500">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-500">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
+                <img src="/api/placeholder/400/300" alt="Team Member" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Maya Patel</h3>
+                    <p class="text-blue-500 mb-4">Editorial Director</p>
+                    <p class="text-gray-500 mb-4">Maya's passion for storytelling and her keen editorial eye help shape the diverse content that makes SpecturnX unique.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-blue-500">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-500">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
+                <img src="/api/placeholder/400/300" alt="Team Member" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">David Kim</h3>
+                    <p class="text-blue-500 mb-4">Technical Lead</p>
+                    <p class="text-gray-500 mb-4">David's innovative approach to technology ensures that SpecturnX remains at the cutting edge of digital publishing.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-blue-500">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-500">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Values Section -->
+<section class="py-16 bg-indigo-700 text-white">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col items-center mb-12">
+      <h2 class="mb-2 text-4xl tracking-tight font-extrabold underline">Our Core Values</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="bg-indigo-800 rounded-lg p-8 shadow-lg">
+        <svg class="h-12 w-12 text-indigo-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+        </svg>
+        <h3 class="text-xl font-bold mb-3">Inclusivity</h3>
+        <p>We believe every voice deserves to be heard and every perspective adds value to the conversation.</p>
+      </div>
+      <div class="bg-indigo-800 rounded-lg p-8 shadow-lg">
+        <svg class="h-12 w-12 text-indigo-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+        </svg>
+        <h3 class="text-xl font-bold mb-3">Innovation</h3>
+        <p>We constantly push boundaries and explore new ideas, formats, and technologies.</p>
+      </div>
+      <div class="bg-indigo-800 rounded-lg p-8 shadow-lg">
+        <svg class="h-12 w-12 text-indigo-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+        <h3 class="text-xl font-bold mb-3">Community</h3>
+        <p>We foster genuine connections and collaborative growth among our contributors and readers.</p>
+      </div>
+      <div class="bg-indigo-800 rounded-lg p-8 shadow-lg">
+        <svg class="h-12 w-12 text-indigo-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+        </svg>
+        <h3 class="text-xl font-bold mb-3">Quality</h3>
+        <p>We are committed to excellence in all content we publish, valuing depth, accuracy, and thoughtfulness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col items-center mb-12">
+      <h2 class="mb-2 text-4xl tracking-tight font-extrabold text-gray-900 underline">What Our Community Says</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Testimonial 1 -->
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <div class="flex items-center mb-6">
+          <img src="/api/placeholder/64/64" alt="User" class="h-12 w-12 rounded-full mr-4">
+          <div>
+            <h4 class="text-lg font-bold text-gray-800">Sarah Martinez</h4>
+            <p class="text-indigo-600">Writer & Educator</p>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-6">
+          "SpecturnX has transformed how I approach my own writing. The diversity of perspectives I encounter here challenges me to think more deeply and write more thoughtfully."
+        </p>
+        <div class="flex text-yellow-400">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <div class="flex items-center mb-6">
+          <img src="/api/placeholder/64/64" alt="User" class="h-12 w-12 rounded-full mr-4">
+          <div>
+            <h4 class="text-lg font-bold text-gray-800">Michael Chen</h4>
+            <p class="text-indigo-600">Software Developer</p>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-6">
+          "As a developer, I appreciate how SpecturnX bridges technical and creative content. The platform's design and functionality make it a joy to use, and the content keeps me coming back daily."
+        </p>
+        <div class="flex text-yellow-400">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <div class="flex items-center mb-6">
+          <img src="/api/placeholder/64/64" alt="User" class="h-12 w-12 rounded-full mr-4">
+          <div>
+            <h4 class="text-lg font-bold text-gray-800">Olivia Thompson</h4>
+            <p class="text-indigo-600">Design Strategist</p>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-6">
+          "SpecturnX has become my go-to source for inspiration. The thoughtful curation of content across disciplines helps me make connections I wouldn't have made otherwise."
+        </p>
+        <div class="flex text-yellow-400">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Join Us Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-xl p-10 md:p-16">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-2/3 mb-10 md:mb-0">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Join Our Community</h2>
+          <p class="text-indigo-100 text-lg mb-6">
+            Become part of a vibrant community of thinkers, creators, and innovators. Share your perspective and discover new ideas that challenge and inspire.
+          </p>
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#" class="bg-white text-indigo-700 font-bold py-3 px-6 rounded-lg hover:bg-indigo-50 transition duration-300 text-center">
+              Get Started
+            </a>
+            <a href="#" class="bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-indigo-700 transition duration-300 text-center">
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/3 md:pl-10">
+          <img src="/api/placeholder/300/300" alt="Join SpecturnX" class="rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FAQ Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-col items-center mb-12">
+      <h2 class="mb-2 text-4xl tracking-tight font-extrabold text-gray-900 underline">Frequently Asked Questions</h2>
+      <p class="text-gray-500 sm:text-xl">
+        Have questions about SpecturnX? We've got answers to help you understand our platform better.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold text-gray-800 mb-4">What makes SpecturnX different?</h3>
+        <p class="text-gray-600">
+          SpecturnX stands out by deliberately bringing together diverse perspectives across disciplines. While many platforms focus on siloed content, we actively seek connections between seemingly unrelated fields, fostering innovation and deeper understanding.
+        </p>
+      </div>
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Can I contribute to SpecturnX?</h3>
+        <p class="text-gray-600">
+          Absolutely! We welcome contributions from thinkers and creators in all fields. Visit our "Write for Us" page to learn about our submission guidelines and editorial process. We're always looking for fresh perspectives.
+        </p>
+      </div>
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Is SpecturnX free to use?</h3>
+        <p class="text-gray-600">
+          Yes, the core content of SpecturnX is freely accessible to all. We do offer a premium membership that provides additional features such as personalized recommendations, community forums, and exclusive content.
+        </p>
+      </div>
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold text-gray-800 mb-4">How can I stay updated with new content?</h3>
+        <p class="text-gray-600">
+          You can subscribe to our weekly newsletter, follow us on social media, or create an account to receive personalized notifications about new content in your areas of interest.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
